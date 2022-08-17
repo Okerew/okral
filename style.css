@@ -1,8 +1,5 @@
 body{ 
-font-family: 'Righteous', cursive;
- background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAP1BMVEUAAAArCgOlYwNbIwC1ZQQ9GgS6eQXJhQqSYQJlLwGnZQMnBgNJIQO7aAS4ZwSISgQ1FAQ0EQSVXgWUYwJ8SgIQv6cOAAABa0lEQVR4nO3aQU4CAAxFwaKoKCqI3v+sXqFvRTQzJ2je8qdzYG3ufcBfIlYgViBWIFYgViBWIFYgViBWIFYgViBWIFYwZ9bmnbX5YG2OrIkViBWIFYgViBWIFYgViBWIFYgViBWIFYgVzCdrc2FtrqzNE2tiBWIFYgViBWIFYgViBWIFYgViBWIFYgViBfPF2txYm2fWxArECsQKxArECsQKxArECsQKxArECsQKxArECsQK5o21eWBNrECsQKxArECsQKxArECsQKxArECsQKxArECswJ4VzAtrYgViBWIFYgViBWIFYgViBWIFYgViBWIFYgViBWIFPv+CObEmViBWIFYgViBWIFYgViBWIFYgViBWIFYgViBWMN+szQ9r88qaWIFYgViBWIFYgViBWIFYgViBWIFYgViBWIFYgVjBPLImViBWIFYgViBWIFYgViBWIFYgViBWIFYgViBWIFYgVjAAAAAAwP/0C6HXAaFKfTuYAAAAAElFTkSuQmCC"); 
-
-  font-size: 17px;
+font-family: monospace;
  
 
   
@@ -10,19 +7,16 @@ font-family: 'Righteous', cursive;
   background-color: black;
 
   text-align: center;
-    text-transform: uppercase;
-  
-  letter-spacing: 2px;
+  letter-spacing: 1px;
     margin-top: 150px;
     margin-bottom: 10px;
  background-size: 1950px 1020px;
   background-position:middle;
 
-  color: white;
-  
+  color: red;
 }
 a{ 
-font-family: 'Righteous', cursive;
+
  
 font-size: 25px;
   background-image:cover;
@@ -33,20 +27,8 @@ font-size: 25px;
     letter-spacing: 2px;
     margin-top: 125px;
     margin-bottom: 10px;
-  
+  text-decoration: none;
   
 
-color: darkgreen;
+color: red;
 }
-p{ 
-font-family: 'Righteous', cursive;
- 
-font-size: 25px;
-  background-image:cover;
-
-  
-  text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    
-  color:red;}
