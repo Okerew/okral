@@ -13,7 +13,7 @@ font-family: monospace;
  background-size: 1950px 1020px;
   background-position:middle;
 
- color: white;  
+ color: gray;  
 }
 a{ 
 
@@ -33,9 +33,10 @@ font-size: 15px;
 color: red;
 }
 .s{
-  color:gray;
+  color:white;
   font-size: 75px;
 }
 .d{
   color:purple;
+  font-size: 15px
 }
