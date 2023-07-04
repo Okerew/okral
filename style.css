@@ -40,3 +40,14 @@ color: red;
   color:purple;
   font-size: 15px
 }
+
+.autoclicker{
+  display: none;
+}
+.spammer{
+  display: none;
+}
+
+.scripts{
+margin-right: 1500px;
+}
