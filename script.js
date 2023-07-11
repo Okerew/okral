@@ -16,3 +16,11 @@ function spammer() {
         }
       }
  
+function cracks() {
+        var x = document.getElementById("cracks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
