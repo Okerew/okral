@@ -1,3 +1,10 @@
+if (!localStorage.getItem('termsAccepted')) {
+  window.open('https://okral-terms.glitch.me/', '_blank');
+  alert('Please read and accept the terms of service');
+  localStorage.setItem('termsAccepted', 'true');
+}
+
+
 function autoclicker() {
         var x = document.getElementById("autoclicker");
         if (x.style.display === "block") {
