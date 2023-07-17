@@ -10,6 +10,7 @@ checkTermsAccepted();
 
 
 
+
 function autoclicker() {
         var x = document.getElementById("autoclicker");
         if (x.style.display === "block") {
