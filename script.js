@@ -1,8 +1,13 @@
-if (!localStorage.getItem('termsAccepted')) {
-  window.open('https://okral-terms.glitch.me/', '_blank');
-  alert('Please read and accept the terms of service');
-  localStorage.setItem('termsAccepted', 'true');
+function checkTermsAccepted() {
+  if (!localStorage.getItem('termsAccepted')) {
+    localStorage.setItem('termsAccepted', 'true');
+    window.location.href = 'https://okral-terms.glitch.me/';
+  }
 }
+
+checkTermsAccepted();
+
+
 
 
 function autoclicker() {
