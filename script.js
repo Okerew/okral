@@ -1,11 +1,23 @@
-function checkTermsAccepted() {
-  if (!localStorage.getItem('termsAccepted')) {
-    localStorage.setItem('termsAccepted', 'true');
-    window.location.href = 'https://okral-terms.glitch.me/';
+
+const correctPassword = '*okral$15#';
+
+function checkPassword() {
+  const inputPassword = prompt('Enter the password to view the content:');
+  
+  if (inputPassword === correctPassword) {
+    showContent();
+  } else {
+    alert('Incorrect password. Please try again.');
   }
 }
 
-checkTermsAccepted();
+function showContent() {
+  const contentDiv = document.getElementById('content');
+  contentDiv.style.display = 'block';
+}
+
+window.onload = checkPassword;
+
 
 
 function autoclicker() {
