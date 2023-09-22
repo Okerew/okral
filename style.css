@@ -44,7 +44,6 @@ color: red;
 .autoclicker{
   display: none;
 
-
 }
 .spammer{
   display: none;
@@ -53,4 +52,6 @@ color: red;
 .scripts{
 margin-right: 1800px;
 }
-
+.c{
+  display:none;
+}
