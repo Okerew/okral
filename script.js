@@ -18,8 +18,8 @@ function spammer() {
         }
       }
  
-function cracks() {
-        var x = document.getElementById("cracks");
+function pyos() {
+        var x = document.getElementById("pyos");
         if (x.style.display === "block") {
           x.style.display = "none";
         } else {
