@@ -26,3 +26,21 @@ function pyos() {
           x.style.display = "block";
         }
       }
+
+function dptech() {
+        var x = document.getElementById("dptech");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
+function ltsm() {
+        var x = document.getElementById("ltsm");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
