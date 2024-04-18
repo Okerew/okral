@@ -44,3 +44,12 @@ function ok_l() {
           x.style.display = "block";
         }
       }
+
+function oce() {
+        var x = document.getElementById("oce");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
