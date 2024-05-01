@@ -6,6 +6,9 @@
             x.classList.add('visible');
         }
     }
+    function autoclicker(){
+      toggleVisibility('autoclicker')
+    }
 
     function spammer() {
         toggleVisibility('spammer');
