@@ -1,55 +1,32 @@
+ function toggleVisibility(id) {
+        var x = document.getElementById(id);
+        if (x.classList.contains('visible')) {
+            x.classList.remove('visible'); 
+        } else {
+            x.classList.add('visible');
+        }
+    }
 
- 
-function spammer() {
-        var x = document.getElementById("spammer");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
- 
-function pyos() {
-        var x = document.getElementById("pyos");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+    function spammer() {
+        toggleVisibility('spammer');
+    }
 
-function dptech() {
-        var x = document.getElementById("dptech");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+    function pyos() {
+        toggleVisibility('pyos');
+    }
 
-function ltsm() {
-        var x = document.getElementById("ltsm");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+    function dptech() {
+        toggleVisibility('dptech');
+    }
 
-function ok_l() {
-        var x = document.getElementById("ok_l");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+    function ltsm() {
+        toggleVisibility('ltsm');
+    }
 
-function oce() {
-        var x = document.getElementById("oce");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
+    function ok_l() {
+        toggleVisibility('ok_l');
+    }
+
+    function oce() {
+        toggleVisibility('oce');
+    }
