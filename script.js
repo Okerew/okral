@@ -33,3 +33,6 @@
     function oce() {
         toggleVisibility('oce');
     }
+    function okrol() {
+        toggleVisibility('okrol');
+    }
