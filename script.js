@@ -36,3 +36,6 @@
     function okrol() {
         toggleVisibility('okrol');
     }
+    function okterminal() {
+        toggleVisibility('okterminal');
+    }
