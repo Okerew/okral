@@ -43,3 +43,6 @@ function okterminal() {
 function ok_blockchain() {
   toggleVisibility("okblockchain");
 }
+function oklearn() {
+  toggleVisibility("oklearn");
+}
