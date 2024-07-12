@@ -46,3 +46,6 @@ function ok_blockchain() {
 function oklearn() {
   toggleVisibility("oklearn");
 }
+function osxiec() {
+  toggleVisibility("osxiec");
+}
