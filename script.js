@@ -49,3 +49,7 @@ function oklearn() {
 function osxiec() {
   toggleVisibility("osxiec");
 }
+
+function biobridge() {
+  toggleVisibility("biobridge");
+}
