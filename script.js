@@ -53,3 +53,7 @@ function osxiec() {
 function biobridge() {
   toggleVisibility("biobridge");
 }
+
+function depramanager(){
+  toggleVisibility("depramanager");
+}
