@@ -1,0 +1,48 @@
+.server{
+  font-size: 20px;
+
+color:blue;
+}
+body{ 
+
+  font-family: monospace;
+ 
+
+  background-image: url("https://cdn.glitch.global/15364336-0bdd-4725-8475-3d5577bf0913/title_screen.png?v=1681586522199");
+  background-repeat: no-repeat;
+  background-color: lightyellow;
+
+  text-align: center;
+  letter-spacing: 1px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+ background-size: 1950px 1020px;
+  background-position:middle;
+
+
+}
+.d{
+  color:purple;
+ font-size: 20px;
+}
+a{
+  text-decoration: none;
+}
+.forge{
+  font-size: 30px;
+
+color:darkorange;
+}
+.t{
+    font-size: 30px;
+
+color:lightblue;
+}
+  .s{
+  font-size: 30px;
+  }
+
+.v2{
+  font-size:30px;
+  color:green;
+}

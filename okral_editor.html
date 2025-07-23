@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://okraleditor.glitch.me/" />
+    <meta property="og:title" content="Okral Code Editor | Created by Okerew" />
+    <meta
+      property="og:description"
+      content="Okral Code Editor is a coding editor created by Okerew, with features such as git integration, collab integration, remote servers, basic feautures, syntax highlighting, basic code completion and more."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.global/08dad197-ffa7-4cdd-b579-683ad1281936/bitmap.png?v=1712415155543"
+    />
+
+    <title>Okral Code Editor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.9/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.9/ext-language_tools.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.0/purify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/esprima@4.0.1/dist/esprima.min.js"></script>
+    
+    <script src="script_editor.js" defer></script>
+    <link rel="stylesheet" href="style_editor.css" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/08dad197-ffa7-4cdd-b579-683ad1281936/bitmap.png?v=1712415155543"
+    />
+  </head>
+  <body>
+     <a href="index.html">Back to okral page</a>
+    <div class="navbar">
+      <select id="language-select">
+        <option value="text">Select a language</option>
+        <option value="javascript">JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="php">PHP</option>
+        <option value="sql">SQL</option>
+        <option value="markdown">Markdown</option>
+        <option value="dockerfile">Docker File</option>
+        <option value="json">JSON</option>
+        <option value="jsx">JSX</option>
+        <option value="mysql">MySql</option>
+        <option value="graphqlschema">GraphQL</option>
+        <option value="python">Python</option>
+        <option value="c_cpp">C++</option>
+        <option value="pgsql">Postgres</option>
+        <option value="yaml">Yaml</option>
+        <option value="golang">Go</option>
+        <option value="kotlin">Kotlin</option>
+      </select>
+      <button onclick="fileOps()">
+        Files
+      </button>
+      <a href="index.html">
+        Download
+      </a>
+      <a href="https://github.com/Okerew/okraleditor/wiki">
+        Help
+      </a>
+      <button onclick="openSettings()">
+        Settings
+      </button>
+      <button onclick="runCode()">
+        Run
+      </button>
+      <button onclick="gitOps()">
+        Git
+      </button>
+      <button onclick="loadExtensions()">
+        Extensions
+      </button>
+      <button onclick="beautifyCode()">
+        Prettier
+      </button>
+      <button onclick="connectToCollaborativeServer()">
+        Collab
+      </button>
+      <button onclick="loadCodeSnippet()">
+        Snippets
+      </button>
+      <button onclick="snapOps()">
+        Snapsohts
+      </button>
+      <button onclick="loadServerFiles()">
+        Remote
+      </button>
+      <button onclick="createDatabaseForm()">
+        Databases
+      </button>
+
+      <button onclick="kubernetesOps()">
+        Kubernetes
+      </button>
+
+      <button onclick="chatOps()">
+        Chatbot
+      </button>
+      <button onclick="executeDockerOperation()">Docker</button>
+    </div>
+    <h1>Okral Code Editor</h1>
+    <div class="tabBar" id="tabBar">
+      <button id="closeActiveTab">Close Active Tab</button>
+      <button onclick="addTab()">Add Tab</button>
+    </div>
+    <div id="editor"></div>
+    <div id="settingsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeSettings()">&times;</span>
+        <h2>Settings</h2>
+        <label>Darkmode/Lightmode</label>
+        <button onclick="toggleTheme()">Toggle</button>
+        <br /><br />
+        <label>Config</label>
+        <button onclick="saveToCookie()">Save</button>
+        <br /><br />
+        <label>Zen</label>
+        <button onclick="toggleZenMode()">Mode</button>
+        <br /><br />
+        <a href="https://github.com/Okerew/okraleditor/wiki/Keybinds"
+          >Keybinds</a
+        >
+        <br /><br />
+        <label>Split</label>
+        <button onclick="toggleSplitView()">Toggle</button>
+      </div>
+    </div>
+    <div id="fileModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closefileOps()">&times;</span>
+        <h2>
+          File
+        </h2>
+        <label>File</label>
+        <input
+          type="file"
+          id="fileInput"
+          accept=""
+          onchange="openFile(event)"
+        />
+        <br />
+        <label>File</label>
+        <button onclick="saveFile()">Save</button>
+        <br />
+        <label>File Structure</label>
+        <button onclick="removeStructure()">Remove</button>
+        <br />
+        <label>Remote File</label>
+        <button onclick="saveRemoteActiveFile()">Save</button>
+        <br />
+        <label>Remote File Tree</label>
+        <button onclick="remoteFileTree()">Show/Hide</button>
+      </div>
+    </div>
+    <div id="runModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeRunCode()">&times;</span>
+        <h2>
+          Run
+        </h2>
+        <label>HTML</label>
+        <button onclick="executeHtmlCode()">Run</button>
+        <br>
+        <label>Show/Hide</label>
+        <button onclick="htmlOutput()">Output</button>
+        <br />
+        <label>Markdown</label>
+        <button onclick="runMarkdown()">Run</button>
+        <br />
+        <br>
+        <label>JavaScript</label>
+        <button onclick="executeCodeInWorker()">Run</button>
+        <br>
+        <label>Remote File</label>
+        <button onclick="executeRemoteActiveFile()">Run</button>
+        <br />
+        <label>Sql Output</label>
+        <button onclick="sqlOutput()">Show/Hide</button>
+      </div>
+    </div>
+    <div id="gitModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeGitOps()">&times;</span>
+        <h2>
+          Git
+        </h2>
+        <label>Git</label>
+        <button onclick="pushToGithub()">Push</button>
+        <br /><br />
+        <label>Git</label>
+        <button onclick="loadRepoFiles()">Clone</button>
+        <br /><br />
+        <label>Git</label>
+        <button onclick="mergeBranches()">Merge</button>
+        <br /><br />
+        <label>Git File Tree</label>
+        <button onclick="hideFileTree()">Show/Hide</button>
+        <br /><br />
+        <label>Git</label>
+        <button onclick="pushAllToGithub()">Push All</button>
+      </div>
+    </div>
+    <div id="snippetModal" class="modal">
+      <div class="modal-content">
+        <span onclick="closeSnipetOps()" class="close">&times;</span>
+        <h2>
+          Snapshots
+        </h2>
+        <button onclick="saveCodeSnippet()">Save Snippet</button>
+        <h2>Saved Snippets</h2>
+        <ul id="snippetList"></ul>
+      </div>
+    </div>
+    <div id="snapshotModal" class="modal">
+      <div class="modal-content">
+        <span onclick="hideSnapOps()" class="close">&times;</span>
+        <h2>Editor Snapshots</h2>
+        <ul id="snapshotList"></ul>
+      </div>
+    </div>
+    <div id="chatbotModal" class="modal">
+      <div class="modal-content">
+        <span onclick="hideChatOps()" class="close">&times;</span>
+        <h2>Ai Chatbot</h2>
+
+        <div>
+          <textarea
+            placeholder="Enter url of the chatbot server"
+            id="chatbot-url"
+            rows="1"
+          >
+https://3cea9b40-82e9-4c0e-b1b9-50816c1bd3d6-00-1fvj2t34qbik8.worf.replit.dev/chat</textarea
+          >
+          <div id="chat-container"></div>
+          <div class="prompt">
+            <textarea
+              id="chatbot-user-input"
+              rows="2"
+              placeholder="Enter your prompt here..."
+            ></textarea>
+            <button id="chatbot-send-button">
+              Send
+              <img
+                class="send_icon"
+                src="https://cdn.glitch.global/08dad197-ffa7-4cdd-b579-683ad1281936/send-svgrepo-com.svg?v=1722957088895"
+                alt="send"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="output-container"></div>
+    <div id="sqlResultContainer"></div>
+    <div id="kubernetesResultContainer"></div>
+    <div id="formContainer"></div>
+    <script src="parsers.js"></script>
+    <script src="chatbot.js"></script>
+  </body>
+</html>

@@ -26,23 +26,10 @@ function ltsm() {
   toggleVisibility("ltsm");
 }
 
-function ok_l() {
-  toggleVisibility("ok_l");
-}
-
 function oce() {
   toggleVisibility("oce");
 }
-function okrol() {
-  toggleVisibility("okrol");
-}
-function okterminal() {
-  toggleVisibility("okterminal");
-}
 
-function ok_blockchain() {
-  toggleVisibility("okblockchain");
-}
 function oklearn() {
   toggleVisibility("oklearn");
 }
@@ -52,8 +39,4 @@ function osxiec() {
 
 function biobridge() {
   toggleVisibility("biobridge");
-}
-
-function depramanager(){
-  toggleVisibility("depramanager");
 }
