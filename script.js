@@ -18,10 +18,6 @@ function pyos() {
   toggleVisibility("pyos");
 }
 
-function dptech() {
-  toggleVisibility("dptech");
-}
-
 function ltsm() {
   toggleVisibility("ltsm");
 }
