@@ -1,38 +1,38 @@
 function toggleVisibility(id) {
-  var x = document.getElementById(id);
-  if (x.classList.contains("visible")) {
-    x.classList.remove("visible");
-  } else {
-    x.classList.add("visible");
-  }
+    var x = document.getElementById(id);
+    if (x.classList.contains("visible")) {
+        x.classList.remove("visible");
+    } else {
+        x.classList.add("visible");
+    }
 }
 function autoclicker() {
-  toggleVisibility("autoclicker");
+    toggleVisibility("autoclicker");
 }
 
 function spammer() {
-  toggleVisibility("spammer");
-}
-
-function pyos() {
-  toggleVisibility("pyos");
+    toggleVisibility("spammer");
 }
 
 function ltsm() {
-  toggleVisibility("ltsm");
+    toggleVisibility("ltsm");
 }
 
 function oce() {
-  toggleVisibility("oce");
+    toggleVisibility("oce");
 }
 
 function oklearn() {
-  toggleVisibility("oklearn");
+    toggleVisibility("oklearn");
 }
 function osxiec() {
-  toggleVisibility("osxiec");
+    toggleVisibility("osxiec");
 }
 
 function biobridge() {
-  toggleVisibility("biobridge");
+    toggleVisibility("biobridge");
+}
+
+function mlc() {
+    toggleVisibility("mlc");
 }
