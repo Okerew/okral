@@ -36,3 +36,7 @@ function biobridge() {
 function mlc() {
     toggleVisibility("mlc");
 }
+
+function ocote() {
+    toggleVisibility("ocote");
+}
