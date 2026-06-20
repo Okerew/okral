@@ -26,78 +26,92 @@
     <div id="content">
         <h1 class="s">Okral</h1>
 
-        <ul class="scripts">
-            <li>
-                <button onclick="osxiec()">
-                    <h2>Osxiec</h2>
-                </button>
-            </li>
-            <li>
-                <button onclick="biobridge()">
-                    <h2>Biobridge</h2>
-                </button>
-            </li>
-            <li>
-                <button onclick="mlc()">
-                    <h2>
-                        MetalLikeCuda
-                    </h2>
-                </button>
-            </li>
-            <li><a href="archive.html">Archive</a></li>
-            <li>
-                <a href="larkos.html">Larkos</a>
-            </li>
-            <li><a href="vscode_extensions.html">Plugins</a></li>
-            <li><a href="links.html">Links</a></li>
-        </ul>
-        <div class="animated-element" id="osxiec">
-            <h1>Osxiec</h1>
+        <div class="main-layout">
+            <nav class="sidebar">
+                <div class="nav-section">
+                    <span class="nav-label">// projects</span>
+                    <ul class="scripts">
+                        <li><button onclick="osxiec()"><span class="nav-arrow">&gt;</span> Osxiec</button></li>
+                        <li><button onclick="biobridge()"><span class="nav-arrow">&gt;</span> Biobridge</button></li>
+                        <li><button onclick="mlc()"><span class="nav-arrow">&gt;</span> MetalLikeCuda</button></li>
+                        <li><button onclick="larkos()"><span class="nav-arrow">&gt;</span> Larkos</button></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <span class="nav-label">// more</span>
+                    <ul class="scripts">
+                        <li><a href="vscode_extensions.html"><span class="nav-arrow">&gt;</span> Plugins</a></li>
+                        <li><a href="archive.html"><span class="nav-arrow">&gt;</span> Archive</a></li>
+                        <li><a href="links.html"><span class="nav-arrow">&gt;</span> Links</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section contact">
+                    <span class="nav-label">// contact</span>
+                    <ul class="scripts">
+                        <li><a href="mailto:okerewgroup@proton.me"><span class="nav-arrow">&gt;</span> Email</a></li>
+                        <li><a href="https://discord.com/users/1130105085918191706"><span class="nav-arrow">&gt;</span>
+                                Discord</a></li>
+                    </ul>
+                </div>
+            </nav>
 
-            <img src="osxiec.png" witdh="500px" height="500px" />
-            <br />
-
-            <p>
-                OSXIEC is a native Docker-like solution for macOS developed by Okerew.
-                It leverages native macOS features to provide containerization
-                capabilities, albeit with some limitations compared to Docker.
-            </p>
-            <br />
-            <a href="https://fazier.com/launches/osxiec" target="_blank" rel="noopener noreferrer"><img
-                    src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=680&badge_type=daily"
-                    width="270" alt="Example Image" class="d-inline-block mt-3 p-3 rounded img-fluid" /></a>
-            <br />
-            <a href="https://github.com/Okerew/osxiec"> Github</a>
-            |
-            <a href="osxiec.html">Osxiec&nbsp;Hub</a>
+            <div class="panel-area">
+                <div class="panel-placeholder" id="panel-placeholder"></div>
+                <div class="animated-element" id="osxiec">
+                    <h1>Osxiec</h1>
+                    <img src="osxiec.png" width="400px" height="400px" />
+                    <p>OSXIEC is a native Docker-like solution for macOS developed by Okerew. It leverages native macOS
+                        features to provide containerization capabilities, albeit with some limitations compared to
+                        Docker.</p>
+                    <a href="https://fazier.com/launches/osxiec" target="_blank" rel="noopener noreferrer"><img
+                            src="https://fazier.com/api/v1/public/badges/embed_image.svg?launch_id=680&badge_type=daily"
+                            width="270" alt="fazier badge" /></a>
+                    <div class="link-row">
+                        <a href="https://github.com/Okerew/osxiec">Github</a>
+                        <span class="sep">|</span>
+                        <a href="osxiec.html">Osxiec Hub</a>
+                    </div>
+                </div>
+                <div class="animated-element" id="biobridge">
+                    <h1>Biobridge</h1>
+                    <img src="biobridge.png" width="400px" height="400px" />
+                    <p>Biobridge is a Python library for simulating biological processes and systems — analyzing,
+                        visualising, and interacting with them.</p>
+                    <p class="install-cmd">pip install biobridge</p>
+                    <div class="link-row">
+                        <a href="https://github.com/Okerew/biobridge">Github</a>
+                    </div>
+                </div>
+                <div class="animated-element" id="mlc">
+                    <h1>MetalLikeCuda</h1>
+                    <img src="https://avatars.githubusercontent.com/u/205430952?s=200&v=4" width="400px" height="400px">
+                    <p>Project/Organization aiming to provide more tools for Metal and make coding Metal shaders for AI
+                        better.</p>
+                    <div class="link-row">
+                        <a href="https://github.com/MetalLikeCuda">Repositories</a>
+                    </div>
+                </div>
+                <div class="animated-element" id="larkos">
+                    <h1>Larkos</h1>
+                    <p><a href="https://github.com/Okerew/larkos">The Lattice-Associated Recursive Knowledge
+                            Organization System</a> — a decentralized neural web architecture simulating a neural
+                        network with hierarchical memory management, dynamic adaptation, and performance optimization.
+                        Neurons are decentralized and organized in layers, allowing them to interact and change over
+                        time beyond just states and weights, while maintaining a dynamic memory system.</p>
+                    <div class="section-divider"></div>
+                    <h2>Larkos 0.3</h2>
+                    <img src="larkos0.1.png" width="400px" height="400px" />
+                    <p>A self-learning model with a state-based fusion mechanism and graph attention that combines
+                        neurons, LLM embeddings, memory, and transformers into one coherent context. Built on the larkos
+                        architecture with imagination, affective systems, and more.</p>
+                    <div class="link-row">
+                        <a href="https://github.com/Okerew/larkos_models">Github</a>
+                        <span class="sep">|</span>
+                        <a href="https://github.com/Okerew/larkos_models/blob/main/Documents/thesis.pdf">Paper</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="animated-element" id="biobridge">
-            <h1>Biobridge</h1>
-            <img src="biobridge.png" width="500px" height="500px" />
-            <p>
-                Biobridge is a Python library for simulating biological processes and
-                systems also analyzing them, visualising them, and interacting with
-                them.
-            </p>
-            <p>To install do pip install biobridge</p>
-            <a href="https://github.com/Okerew/biobridge">Github</a>
-        </div>
-        <div class="animated-element" id="mlc">
-            <h1>MetalLikeCuda</h1>
-            <img src="https://avatars.githubusercontent.com/u/205430952?s=200&v=4" width="500px" height="500px">
-            <p>
-                Project/Organization aiming to provide more tools for metal and make coding metal
-                shaders for ai
-                better.
-            </p>
-            <a href="https://github.com/MetalLikeCuda">
-                Repositories
-            </a>
-        </div>
-        <p>
-            Contact me, <a href="mailto:okerewgroup@proton.me">email</a>,
-            <a href="https://discord.com/users/1130105085918191706">discord</a>
-        </p>
     </div>
 </body>
 

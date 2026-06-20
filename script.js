@@ -1,42 +1,32 @@
-function toggleVisibility(id) {
-    var x = document.getElementById(id);
-    if (x.classList.contains("visible")) {
-        x.classList.remove("visible");
-    } else {
-        x.classList.add("visible");
+var currentPanel = null;
+
+function showPanel(id) {
+    var placeholder = document.getElementById("panel-placeholder");
+    if (currentPanel === id) {
+        document.getElementById(id).classList.remove("visible");
+        if (placeholder) placeholder.style.display = "";
+        currentPanel = null;
+        return;
     }
-}
-function autoclicker() {
-    toggleVisibility("autoclicker");
-}
-
-function spammer() {
-    toggleVisibility("spammer");
-}
-
-function ltsm() {
-    toggleVisibility("ltsm");
+    if (currentPanel) {
+        document.getElementById(currentPanel).classList.remove("visible");
+    }
+    currentPanel = id;
+    var el = document.getElementById(id);
+    if (el) el.classList.add("visible");
+    if (placeholder) placeholder.style.display = "none";
 }
 
-function oce() {
-    toggleVisibility("oce");
+function toggleVisibility(id) {
+    showPanel(id);
 }
-
-function oklearn() {
-    toggleVisibility("oklearn");
-}
-function osxiec() {
-    toggleVisibility("osxiec");
-}
-
-function biobridge() {
-    toggleVisibility("biobridge");
-}
-
-function mlc() {
-    toggleVisibility("mlc");
-}
-
-function ocote() {
-    toggleVisibility("ocote");
-}
+function autoclicker() { showPanel("autoclicker"); }
+function spammer() { showPanel("spammer"); }
+function ltsm() { showPanel("ltsm"); }
+function oce() { showPanel("oce"); }
+function oklearn() { showPanel("oklearn"); }
+function osxiec() { showPanel("osxiec"); }
+function biobridge() { showPanel("biobridge"); }
+function mlc() { showPanel("mlc"); }
+function ocote() { showPanel("ocote"); }
+function larkos() { showPanel("larkos"); }

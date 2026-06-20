@@ -1,60 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plugins — Okral</title>
     <link rel="icon" href="okerewgroup.png" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+        .plugins-header {
+            text-align: center;
+            padding: 32px 0 8px;
+        }
+
+        .plugins-header h1 {
+            font-size: 48px;
+            letter-spacing: 4px;
+            color: white;
+        }
+
+        .plugins-header p {
+            color: #555;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .plugins-nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .plugins-nav a {
+            font-size: 14px;
+            color: #555;
+            letter-spacing: 2px;
+        }
+
+        .plugins-nav a:hover {
+            color: pink;
+        }
+
+        .section-title {
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #444;
+            text-transform: uppercase;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 8px;
+            margin: 40px 0 24px;
+        }
+
+        .plugin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 20px;
+        }
+
+        .plugin-card {
+            background: #0a0a0a;
+            border: 1px solid #1e1e1e;
+            border-radius: 6px;
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: border-color 0.2s;
+        }
+
+        .plugin-card:hover {
+            border-color: #333;
+        }
+
+        .plugin-card.deprecated {
+            opacity: 0.6;
+        }
+
+        .plugin-card.deprecated:hover {
+            border-color: #2a1a1a;
+        }
+
+        .plugin-thumb {
+            flex: 0 0 72px;
+            width: 72px;
+            height: 72px;
+            border-radius: 4px;
+            object-fit: cover;
+            border: 1px solid #222;
+        }
+
+        .plugin-thumb-placeholder {
+            flex: 0 0 72px;
+            width: 72px;
+            height: 72px;
+            background: #111;
+            border-radius: 4px;
+            border: 1px solid #1e1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 22px;
+        }
+
+        .plugin-body {
+            flex: 1;
+        }
+
+        .plugin-name {
+            font-size: 17px;
+            color: white;
+            margin: 0 0 6px;
+            letter-spacing: 1px;
+        }
+
+        .plugin-badges {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-size: 10px;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .badge-nvim {
+            background: #1a2a1a;
+            color: #6f6;
+            border: 1px solid #2a3a2a;
+        }
+
+        .badge-vscode {
+            background: #1a1a2a;
+            color: #88f;
+            border: 1px solid #2a2a3a;
+        }
+
+        .badge-deprecated {
+            background: #2a1a1a;
+            color: #f66;
+            border: 1px solid #3a2020;
+        }
+
+        .badge-active {
+            background: #1a2a2a;
+            color: #6ff;
+            border: 1px solid #2a3a3a;
+        }
+
+        .plugin-desc {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #666;
+            margin: 0 0 14px;
+        }
+
+        .plugin-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .plugin-links a {
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: pink;
+            padding: 3px 10px;
+            border: 1px solid #2a1a1a;
+            border-radius: 3px;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .plugin-links a:hover {
+            border-color: pink;
+            color: white;
+        }
+
+        .plugins-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+    </style>
 </head>
 
 <body>
-    <nav>
-        <a href="index.html">Homepage</a>
-    </nav>
-
-    <div>
-        <h1>od.nvim</h1>
-        <img src="https://github.com/Okerew/od.nvim/blob/main/od.png?raw=true" width="500px" height="500px">
-        <p>
-            Onto Debug is a neovim plugin designed to help debugging, testing (so debugging really) but not act as a
-            full debugger protocol or a testing framework. It's whole design point is also to run only on demand.
-        </p>
-        <a href="https://github.com/Okerew/od.nvim">
-            Github
-        </a>
-    </div>
-    <div>
-        <h1>reminders-sync.nvim</h1>
-        <p>
-            A simple wrapper neovim plugin which uses https://github.com/keith/reminders-cli to allow pulling reminders
-            to a certain directory, and editing them, while automatically pushing to macOS Reminders app.
-        </p>
-        <a href="https://github.com/Okerew/reminders-sync">Github</a>
+    <div class="plugins-nav">
+        <a href="index.html">&larr; Homepage</a>
     </div>
 
-    <div>
-        <h1>Depramanager</h1>
-        <img src="depramanger.png" width="500px" height="500px" />
-        <p>DEPRECATED</p>
-        <p>
-            The Depramanager is a Visual Studio Code (VSCode) extension designed to
-            help developers manage dependencies for various programming languages. It
-            provides functionalities to analyze, sync, update, and install
-            dependencies, ensuring that your project's dependencies are up-to-date and
-            correctly declared.
-        </p>
-        <a href="https://marketplace.visualstudio.com/items?itemName=Okerew.depramanger&ssr=false#overview">Vscode
-            Marketplace</a>
-        <a href="https://open-vsx.org/extension/Okerew/depramanger">Open VSX Marketplace</a>
-        <a href="https://github.com/Okerew/depramanager-nvim/tree/main">Neovim Port</a>
-    </div>
+    <div class="plugins-wrapper">
+        <div class="plugins-header">
+            <h1>Plugins</h1>
+            <p>// neovim &amp; vscode extensions</p>
+        </div>
 
-    <div>
-        <h1>Shader languages support Preview</h1>
-        <img src="icon.png" width="500px" height="500px" />
-        <p>DEPRECATED</p>
-        <p>
-            Shader languages support for VS Code: HLSL - High-Level Shading Language
-            GLSL - OpenGL Shading Language Cg - C for Graphics Metal- Apple Metal
-        </p>
-        <a href="https://marketplace.visualstudio.com/items?itemName=Okerew.shader-with-metal">Vscode
-            Marketplace</a>
-        <a href="https://open-vsx.org/extension/Okerew/shader-with-metal">Open VSX Marketplace</a>
+        <div class="section-title">Neovim</div>
+        <div class="plugin-grid">
+
+            <div class="plugin-card">
+                <img class="plugin-thumb" src="https://github.com/Okerew/od.nvim/blob/main/od.png?raw=true"
+                    alt="od.nvim" onerror="this.style.display='none'">
+                <div class="plugin-body">
+                    <div class="plugin-name">od.nvim</div>
+                    <div class="plugin-badges">
+                        <span class="badge badge-nvim">neovim</span>
+                        <span class="badge badge-active">active</span>
+                    </div>
+                    <p class="plugin-desc">Onto Debug — a neovim plugin for on-demand debugging and testing. Not a full
+                        DAP or test framework; designed to stay out of the way until you need it.</p>
+                    <div class="plugin-links">
+                        <a href="https://github.com/Okerew/od.nvim">Github</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plugin-card">
+                <div class="plugin-thumb-placeholder">&#128203;</div>
+                <div class="plugin-body">
+                    <div class="plugin-name">reminders-sync.nvim</div>
+                    <div class="plugin-badges">
+                        <span class="badge badge-nvim">neovim</span>
+                        <span class="badge badge-active">active</span>
+                    </div>
+                    <p class="plugin-desc">Wraps <code>reminders-cli</code> to pull macOS Reminders into a directory,
+                        edit them in neovim, and push changes back automatically.</p>
+                    <div class="plugin-links">
+                        <a href="https://github.com/Okerew/reminders-sync">Github</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section-title">VS Code</div>
+        <div class="plugin-grid">
+
+            <div class="plugin-card deprecated">
+                <img class="plugin-thumb" src="depramanger.png" alt="Depramanager">
+                <div class="plugin-body">
+                    <div class="plugin-name">Depramanager</div>
+                    <div class="plugin-badges">
+                        <span class="badge badge-vscode">vscode</span>
+                        <span class="badge badge-deprecated">deprecated</span>
+                    </div>
+                    <p class="plugin-desc">VS Code extension for managing multi-language dependencies — analyze, sync,
+                        update, and install across project dependency files.</p>
+                    <div class="plugin-links">
+                        <a href="https://marketplace.visualstudio.com/items?itemName=Okerew.depramanger">VS
+                            Marketplace</a>
+                        <a href="https://open-vsx.org/extension/Okerew/depramanger">Open VSX</a>
+                        <a href="https://github.com/Okerew/depramanager-nvim/tree/main">Neovim Port</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plugin-card deprecated">
+                <img class="plugin-thumb" src="icon.png" alt="Shader Support">
+                <div class="plugin-body">
+                    <div class="plugin-name">Shader Languages Support</div>
+                    <div class="plugin-badges">
+                        <span class="badge badge-vscode">vscode</span>
+                        <span class="badge badge-deprecated">deprecated</span>
+                    </div>
+                    <p class="plugin-desc">Syntax support for shader languages in VS Code: HLSL, GLSL, Cg, and Apple
+                        Metal.</p>
+                    <div class="plugin-links">
+                        <a href="https://marketplace.visualstudio.com/items?itemName=Okerew.shader-with-metal">VS
+                            Marketplace</a>
+                        <a href="https://open-vsx.org/extension/Okerew/shader-with-metal">Open VSX</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </body>
+
+</html>
