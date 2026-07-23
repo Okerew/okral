@@ -8,6 +8,10 @@ body {
     overflow: hidden;
 }
 
+html {
+    background-color: black;
+}
+
 @media (max-width: 600px) {
 
     html,
@@ -238,13 +242,21 @@ button:hover {
         padding-right: 0;
         padding-top: 0;
         overflow-y: visible;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0 24px;
+        display: block;
     }
 
     .nav-section {
-        margin-bottom: 12px;
+        margin-bottom: 20px;
+    }
+
+    .scripts li {
+        margin: 10px 0;
+    }
+
+    .scripts li a,
+    .scripts li button {
+        padding: 6px 0;
+        font-size: 16px;
     }
 
     .panel-area {
